@@ -1,0 +1,105 @@
+<html>
+    <head> 
+        <style>
+            p{
+                position: absolute;
+                font-size: 33px;
+                
+            }
+            body{
+                background-color: gainsboro;
+            }
+         h1{
+            text-align: center;
+            font-size: 50px;
+            font-family:Helvetica     ;
+            color: darkcyan; 
+         }
+ tr td{
+
+    margin: 0;
+    padding: 0
+            ;} 
+      td {
+           
+          
+            width:200px;
+            height: 600px;
+         }
+         img{
+            
+            width: 338px;
+         }
+     /*   .def{
+          width: ;
+          height:190px;
+         }*/
+        </style>
+    </head>
+    <body onmousemove="move()">
+       <h1>food</h1>
+         <p draggable="false" id="p1" onmousedown="pp1=true" onmouseup="pp1=false">0TND</p>
+        <p draggable="false" id="p2" onmousedown="pp2=true" onmouseup="pp2=false"></p>
+        <p  draggable="false" id="p3" onmousedown="pp3=true" onmouseup="pp3=false"></p>
+        <p draggable="false" id="p4" onmousedown="pp4=true" onmouseup="pp4=false"></p>
+        <p draggable="false" id="p5" onmousedown="pp5=true" onmouseup="pp5=false"></p>
+        <p draggable="false" id="p6" onmousedown="pp6=true" onmouseup="pp6=false"></p>
+       <table>
+        <tr>
+      
+      <td><img  src="image/pizza.jpg" alt="i1"></td> 
+     <td> <img src="image/creape.jpg" alt="i3"></td> 
+      <td><img src="image/juse.jpg" alt="i4"></td> 
+       </tr>
+       <tr>
+      <td><img src="image/cake.jpg" alt="i6"></td> 
+      <td><img class="def" src="image/pasta.jpg" alt="i5"></td>
+      <td> <img class="def" src="image/Sandwich.jpg" alt="i2"></td>
+       </tr>
+    </table>
+    <script>
+        var pp1 = false
+        var pp2 = false
+        var pp3 = false
+        var pp4 = false
+        var pp5 = false
+        var pp6 = false
+        function move(){
+            if(pp1){
+                moveNow(window.p1)
+            }
+         else   if(pp2){
+                moveNow(window.p2)
+            }
+           else if(pp3){
+                moveNow(window.p3)
+            }
+         else   if(pp4){
+                moveNow(window.p4)
+            }
+        else    if(pp5){
+                moveNow(window.p5)
+            }
+         else   if(pp6){
+                moveNow(window.p6)
+            }
+          
+        }
+        function foor(){
+        var all=document.getElementsByTagName("p")
+        for(x=0;x<all.length;x++)
+        all[x].style.zIndex=0
+        }
+        function moveNow(el){
+            foor()
+            el.style.zIndex=10
+            el.style.left=window.event.clientX-60
+            el.style.top=window.event.clientY-60
+
+        }
+        
+     
+
+    </script>
+    </body>
+</html>
